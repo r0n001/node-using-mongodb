@@ -3,12 +3,12 @@ import { addnewProduct, getProducts, getProductWithID } from '../controllers/con
 const routes = (app) => {
     app.route('/products')
       .get(getProducts)
-    
-      // post endpoint
       .post(addnewProduct);
     
      app.route('/products/:ProductID')
-      .get(getProductWithID);
+      .get(getProductWithID)
+      .put(updateProduct)
+      .delete(deleteProduct);
 }
 
 export default routes;
